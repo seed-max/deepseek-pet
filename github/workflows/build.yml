@@ -1,0 +1,42 @@
+{
+  "name": "deepseek-pet",
+  "version": "1.0.0",
+  "description": "DeepSeek 鲸鱼娘桌宠",
+  "main": "main.js",
+  "author": "DeepSeek Pet",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.deepseek.pet",
+    "productName": "DeepSeekPet",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DeepSeek 鲸鱼娘"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html"
+    ]
+  }
+}
